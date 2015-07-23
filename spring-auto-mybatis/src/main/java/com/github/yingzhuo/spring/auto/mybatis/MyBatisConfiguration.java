@@ -34,7 +34,7 @@ public class MyBatisConfiguration {
 
     @Bean
     @ConditionalOnBean(DataSource.class)
-    @ConditionalOnClass(SqlSessionTemplate.class)
+    @ConditionalOnClass({SqlSessionTemplate.class, ConfigBean.class})
     public SqlSessionFactoryBean sqlSessionFactory() throws Throwable {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);

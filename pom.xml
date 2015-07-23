@@ -9,11 +9,13 @@
     <version>1.0.0</version>
     <modules>
         <module>spring-auto-mybatis</module>
+        <module>spring-auto-jmustache</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <encoding>UTF-8</encoding>
+        <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
         <spring.version>4.1.7.RELEASE</spring.version>
     </properties>
 
@@ -23,17 +25,23 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot</artifactId>
-                <version>1.2.5.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-autoconfigure</artifactId>
-                <version>1.2.5.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <!-- spring -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+                <scope>provided</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
@@ -52,6 +60,14 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
                 <version>1.2.3</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- jmustache -->
+            <dependency>
+                <groupId>com.samskivert</groupId>
+                <artifactId>jmustache</artifactId>
+                <version>1.10</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
