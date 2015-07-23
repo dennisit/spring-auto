@@ -16,6 +16,7 @@ mvn clean install
 wiki
 ---------------------------
 * [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
+* [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
 
 license
 ---------------------------

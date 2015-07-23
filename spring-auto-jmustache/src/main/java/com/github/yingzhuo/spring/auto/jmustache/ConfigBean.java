@@ -15,7 +15,6 @@ public class ConfigBean implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         Assert.hasText(prefix);
-        Assert.hasText(suffix);
         Assert.hasText(encoding);
 
         if (prefix.startsWith("/")) {
