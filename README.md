@@ -13,11 +13,11 @@ cd spring-auto/
 mvn clean install
 ```
 
-wiki of sub-project
+wiki
 ---------------------------
-[spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
+* [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
 
-licenses
+license
 ---------------------------
 
 ```
@@ -45,4 +45,3 @@ contact me
 ![QQ](http://img.shields.io/badge/QQ-23007067-blue.svg)
 ![WeChat](http://img.shields.io/badge/WeChat-yingzhor-blue.svg)
 ![Email](http://img.shields.io/badge/Email-yingzhor@gmail.com-blue.svg)
-![Phone](http://img.shields.io/badge/Phone-+86_189_1694_4373-blue.svg)
