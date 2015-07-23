@@ -4,8 +4,20 @@
 
 # spring-auto
 
+install
+---------------------------
 
-许可证
+```bash
+git clone git@github.com:yingzhuo/spring-auto.git
+cd spring-auto/
+mvn clean install
+```
+
+wiki of sub-project
+---------------------------
+[spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
+
+licenses
 ---------------------------
 
 ```
@@ -28,7 +40,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-联系我
+contact me
 ---------------------------
 ![QQ](http://img.shields.io/badge/QQ-23007067-blue.svg)
 ![WeChat](http://img.shields.io/badge/WeChat-yingzhor-blue.svg)

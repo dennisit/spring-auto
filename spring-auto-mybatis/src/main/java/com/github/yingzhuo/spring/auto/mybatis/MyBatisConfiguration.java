@@ -1,6 +1,5 @@
-package com.github.yingzhuo.spring.auto.mybatis.config;
+package com.github.yingzhuo.spring.auto.mybatis;
 
-import com.github.yingzhuo.spring.auto.mybatis.autoconfig.MyBatisConfigBean;
 import org.apache.ibatis.session.ExecutorType;
 import org.mybatis.spring.MyBatisExceptionTranslator;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -21,7 +20,7 @@ import javax.sql.DataSource;
 @Configurable
 @EnableAutoConfiguration
 @Order(Ordered.HIGHEST_PRECEDENCE)
-@EnableConfigurationProperties(MyBatisConfigBean.class)
+@EnableConfigurationProperties(ConfigBean.class)
 @ComponentScan("com.github.yingzhuo.spring.auto.mybatis")
 public class MyBatisConfiguration {
 
@@ -29,7 +28,7 @@ public class MyBatisConfiguration {
     private DataSource dataSource;
 
     @Autowired
-    private MyBatisConfigBean configBean;
+    private ConfigBean configBean;
 
     /* -------------------------------------------------------------------------------------- */
 

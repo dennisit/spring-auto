@@ -1,4 +1,4 @@
-package com.github.yingzhuo.spring.auto.mybatis.autoconfig;
+package com.github.yingzhuo.spring.auto.mybatis;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -8,14 +8,14 @@ import org.springframework.core.io.Resource;
 import java.io.IOException;
 
 @ConfigurationProperties(prefix = "spring.auto.mybatis")
-public class MyBatisConfigBean implements InitializingBean {
+public class ConfigBean implements InitializingBean {
 
     private Resource configLocation = new ClassPathResource("mybatis.cnf.xml");
     private boolean failFast = true;
     private String executorType = "SIMPLE";
     private boolean useExceptionTranslator = true;
 
-    public MyBatisConfigBean() {
+    public ConfigBean() {
         super();
     }
 
