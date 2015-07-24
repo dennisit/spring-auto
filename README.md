@@ -7,16 +7,19 @@
 install
 ---------------------------
 
-```bash
+spring-auto-test module just for test. No need to install.
+
+```
 git clone git@github.com:yingzhuo/spring-auto.git
 cd spring-auto/
-mvn clean install
+mvn clean install -pl '!spring-auto-test'
 ```
 
 wiki
 ---------------------------
 * [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
 * [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
+* [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
 
 license
 ---------------------------

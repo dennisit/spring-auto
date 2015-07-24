@@ -11,6 +11,7 @@
         <module>spring-auto-mybatis</module>
         <module>spring-auto-jmustache</module>
         <module>spring-auto-test</module>
+        <module>spring-auto-qiniuyun</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -204,6 +205,22 @@
                 <version>2.3.3</version>
                 <scope>provided</scope>
             </dependency>
+
+            <!-- qiniu-javasdk -->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>[7.0.0, 7.0.99]</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- commons -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.4</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -213,6 +230,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.2.5.RELEASE</version>
+                <!--
                 <executions>
                     <execution>
                         <goals>
@@ -220,6 +238,7 @@
                         </goals>
                     </execution>
                 </executions>
+                -->
                 <dependencies>
                     <dependency>
                         <groupId>org.springframework</groupId>
