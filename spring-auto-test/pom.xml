@@ -27,6 +27,12 @@
             <artifactId>spring-auto-qiniuyun</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.yingzhuo</groupId>
+            <artifactId>spring-auto-druid</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
 
         <!-- spring-boot -->
         <dependency>
@@ -160,6 +166,12 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <!-- druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
         </dependency>
     </dependencies>
 </project>

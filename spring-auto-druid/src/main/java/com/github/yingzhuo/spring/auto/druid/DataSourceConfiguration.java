@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -26,12 +27,14 @@ public class DataSourceConfiguration {
 
     @Bean
     @Primary
+    @ConditionalOnClass(DruidDataSource.class)
     @ConditionalOnProperty(name = "spring.auto.druid.primary", havingValue = "true", matchIfMissing = false)
     public DataSource primaryDataSource() {
         return doCreateDataSource();
     }
 
     @Bean
+    @ConditionalOnClass(DruidDataSource.class)
     @ConditionalOnProperty(name = "spring.auto.druid.primary", havingValue = "false", matchIfMissing = true)
     public DataSource nonPrimaryDataSource() {
         return doCreateDataSource();
