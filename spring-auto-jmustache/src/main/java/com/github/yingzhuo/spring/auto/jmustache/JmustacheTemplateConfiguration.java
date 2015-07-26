@@ -18,11 +18,11 @@ import org.springframework.core.annotation.Order;
 @ComponentScan("com.github.yingzhuo.spring.auto.jmustache")
 public class JmustacheTemplateConfiguration {
 
-    @Autowired(required = false)
+    @Autowired
     private ConfigBean configBean;
 
     @Bean
-    @ConditionalOnClass({Mustache.class, ConfigBean.class})
+    @ConditionalOnClass(Mustache.class)
     public JmustacheTemplate jmustacheTemplate() {
         JmustacheTemplate bean = new JmustacheTemplate();
         bean.setEncoding(configBean.getEncoding());
@@ -30,4 +30,5 @@ public class JmustacheTemplateConfiguration {
         bean.setSuffix(configBean.getSuffix());
         return bean;
     }
+
 }

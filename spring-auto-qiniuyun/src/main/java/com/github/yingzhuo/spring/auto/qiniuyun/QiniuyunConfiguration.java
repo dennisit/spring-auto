@@ -18,7 +18,7 @@ import org.springframework.core.annotation.Order;
 @ComponentScan("com.github.yingzhuo.spring.auto.qiniuyun")
 public class QiniuyunConfiguration {
 
-    @Autowired(required = false)
+    @Autowired
     private ConfigBean configBean;
 
     @Bean

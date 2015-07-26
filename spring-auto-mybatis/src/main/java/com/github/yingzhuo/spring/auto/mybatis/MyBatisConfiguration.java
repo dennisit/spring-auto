@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 @ComponentScan("com.github.yingzhuo.spring.auto.mybatis")
 public class MyBatisConfiguration {
 
-    @Autowired(required = false)
+    @Autowired
     private DataSource dataSource;
 
     @Autowired
@@ -34,7 +34,7 @@ public class MyBatisConfiguration {
 
     @Bean
     @ConditionalOnBean(DataSource.class)
-    @ConditionalOnClass({SqlSessionTemplate.class, ConfigBean.class})
+    @ConditionalOnClass(SqlSessionTemplate.class)
     public SqlSessionFactoryBean sqlSessionFactory() throws Throwable {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
@@ -53,8 +53,7 @@ public class MyBatisConfiguration {
             bean =
                     new SqlSessionTemplate(
                             sqlSessionFactory().getObject(),
-                            ExecutorType.valueOf(configBean.getExecutorType()),
-                            new MyBatisExceptionTranslator(dataSource, true)
+                            ExecutorType.valueOf(configBean.getExecutorType()), new MyBatisExceptionTranslator(dataSource, true)
                     );
 
         } else {
@@ -64,7 +63,7 @@ public class MyBatisConfiguration {
                             ExecutorType.valueOf(configBean.getExecutorType())
                     );
         }
-
         return bean;
     }
+
 }
