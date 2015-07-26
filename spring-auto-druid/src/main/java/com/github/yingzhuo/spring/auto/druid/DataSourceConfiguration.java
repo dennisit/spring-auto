@@ -1,6 +1,8 @@
 package com.github.yingzhuo.spring.auto.druid;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -22,6 +24,8 @@ import javax.sql.DataSource;
 @ComponentScan("com.github.yingzhuo.spring.auto.druid")
 public class DataSourceConfiguration {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceConfiguration.class);
+
     @Autowired
     private ConfigBean configBean;
 
@@ -30,6 +34,7 @@ public class DataSourceConfiguration {
     @ConditionalOnClass(DruidDataSource.class)
     @ConditionalOnProperty(name = "spring.auto.druid.primary", havingValue = "true", matchIfMissing = false)
     public DataSource primaryDataSource() {
+        LOGGER.debug("create druid datasource' instance. (primary)");
         return doCreateDataSource();
     }
 
@@ -37,6 +42,7 @@ public class DataSourceConfiguration {
     @ConditionalOnClass(DruidDataSource.class)
     @ConditionalOnProperty(name = "spring.auto.druid.primary", havingValue = "false", matchIfMissing = true)
     public DataSource nonPrimaryDataSource() {
+        LOGGER.debug("create druid datasource' instance.");
         return doCreateDataSource();
     }
 

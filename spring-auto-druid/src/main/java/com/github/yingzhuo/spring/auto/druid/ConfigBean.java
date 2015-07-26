@@ -2,8 +2,10 @@ package com.github.yingzhuo.spring.auto.druid;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.io.Serializable;
+
 @ConfigurationProperties(prefix = "spring.auto.druid")
-public class ConfigBean {
+public class ConfigBean implements Serializable {
 
     private String driverClassName;
     private String username;

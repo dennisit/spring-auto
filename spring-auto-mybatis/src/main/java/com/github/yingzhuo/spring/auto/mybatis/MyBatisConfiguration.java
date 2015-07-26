@@ -4,6 +4,8 @@ import org.apache.ibatis.session.ExecutorType;
 import org.mybatis.spring.MyBatisExceptionTranslator;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -23,6 +25,8 @@ import javax.sql.DataSource;
 @EnableConfigurationProperties(ConfigBean.class)
 @ComponentScan("com.github.yingzhuo.spring.auto.mybatis")
 public class MyBatisConfiguration {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MyBatisConfiguration.class);
 
     @Autowired
     private DataSource dataSource;
@@ -47,6 +51,9 @@ public class MyBatisConfiguration {
     @ConditionalOnBean(DataSource.class)
     @ConditionalOnClass(SqlSessionTemplate.class)
     public SqlSessionTemplate sqlSessionTemplate() throws Throwable {
+
+        LOGGER.debug("create SqlSession's instance.");
+
         SqlSessionTemplate bean;
 
         if (configBean.isUseExceptionTranslator()) {

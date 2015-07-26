@@ -6,9 +6,10 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 @ConfigurationProperties(prefix = "spring.auto.mybatis")
-public class ConfigBean implements InitializingBean {
+public class ConfigBean implements Serializable, InitializingBean {
 
     private Resource configLocation = new ClassPathResource("mybatis.cnf.xml");
     private boolean failFast = true;

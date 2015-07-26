@@ -5,8 +5,10 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.util.Assert;
 
+import java.io.Serializable;
+
 @ConfigurationProperties(prefix = "spring.auto.jmustache")
-public class ConfigBean implements InitializingBean {
+public class ConfigBean implements Serializable, InitializingBean {
 
     private String prefix = "META-INF/jmustache-template/";
     private String suffix = "";
