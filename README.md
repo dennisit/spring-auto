@@ -4,10 +4,10 @@
 
 # spring-auto
 
-install
+安装
 ---------------------------
 
-spring-auto-test module just for test. No need to install.
+`spring-auto-test` module仅是为了测试而存在不必安装到本地maven仓库
 
 ```
 git clone git@github.com:yingzhuo/spring-auto.git
@@ -23,7 +23,7 @@ wiki
 * [spring-auto-druid](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-druid)
 
 
-license
+许可证
 ---------------------------
 
 ```
@@ -46,8 +46,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-contact me
+联系我
 ---------------------------
 ![QQ](http://img.shields.io/badge/QQ-23007067-blue.svg)
 ![WeChat](http://img.shields.io/badge/WeChat-yingzhor-blue.svg)
 ![Email](http://img.shields.io/badge/Email-yingzhor@gmail.com-blue.svg)
+![Phone](http://img.shields.io/badge/Phone-+86_189_1694_4373-blue.svg)
