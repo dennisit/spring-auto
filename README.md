@@ -12,7 +12,7 @@
 ```
 git clone git@github.com:yingzhuo/spring-auto.git
 cd spring-auto/
-mvn clean install -pl '!spring-auto-test'
+mvn clean install -pl '!spring-auto-test' -Dmaven.test.skip=true
 ```
 
 wiki
