@@ -4,16 +4,12 @@ import com.samskivert.mustache.Mustache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
-@Configuration
-@EnableAutoConfiguration
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(ConfigBean.class)
 @ConditionalOnClass(Mustache.class)
