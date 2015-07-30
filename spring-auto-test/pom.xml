@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.yingzhuo</groupId>
-            <artifactId>spring-auto-jmustache</artifactId>
+            <artifactId>spring-auto-qiniuyun</artifactId>
             <version>1.0.0</version>
         </dependency>
 
