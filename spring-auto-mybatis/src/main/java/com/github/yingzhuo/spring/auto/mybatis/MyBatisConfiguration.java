@@ -7,23 +7,19 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
 import javax.sql.DataSource;
 
-@Configurable
-@EnableAutoConfiguration
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(ConfigBean.class)
-@ComponentScan("com.github.yingzhuo.spring.auto.mybatis")
+@ConditionalOnBean(DataSource.class)
+@ConditionalOnClass({SqlSessionTemplate.class, SqlSessionFactoryBean.class})
 public class MyBatisConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyBatisConfiguration.class);
@@ -37,8 +33,6 @@ public class MyBatisConfiguration {
     /* -------------------------------------------------------------------------------------- */
 
     @Bean
-    @ConditionalOnBean(DataSource.class)
-    @ConditionalOnClass(SqlSessionTemplate.class)
     public SqlSessionFactoryBean sqlSessionFactory() throws Throwable {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
@@ -48,8 +42,6 @@ public class MyBatisConfiguration {
     }
 
     @Bean
-    @ConditionalOnBean(DataSource.class)
-    @ConditionalOnClass(SqlSessionTemplate.class)
     public SqlSessionTemplate sqlSessionTemplate() throws Throwable {
 
         LOGGER.debug("create SqlSession's instance.");
