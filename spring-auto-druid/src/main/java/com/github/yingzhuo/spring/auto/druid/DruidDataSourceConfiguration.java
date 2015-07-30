@@ -22,9 +22,9 @@ import javax.sql.DataSource;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(ConfigBean.class)
 @ComponentScan("com.github.yingzhuo.spring.auto.druid")
-public class DataSourceConfiguration {
+public class DruidDataSourceConfiguration {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DruidDataSourceConfiguration.class);
 
     @Autowired
     private ConfigBean configBean;
