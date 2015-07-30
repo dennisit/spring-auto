@@ -17,22 +17,6 @@
             <artifactId>spring-auto-jmustache</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.yingzhuo</groupId>
-            <artifactId>spring-auto-mybatis</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.yingzhuo</groupId>
-            <artifactId>spring-auto-qiniuyun</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.yingzhuo</groupId>
-            <artifactId>spring-auto-druid</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
 
         <!-- spring-boot -->
         <dependency>
