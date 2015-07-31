@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(ConfigBean.class)
+@ConditionalOnProperty(name = "spring.auto.druid.enabled", havingValue = "true", matchIfMissing = false)
 public class DruidDataSourceConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DruidDataSourceConfiguration.class);
