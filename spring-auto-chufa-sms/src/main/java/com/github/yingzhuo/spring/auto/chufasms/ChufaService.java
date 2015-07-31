@@ -51,8 +51,8 @@ public final class ChufaService {
             HttpPost httpPost = new HttpPost("http://h.1069106.com:1210/Services/MsgSend.asmx/SendMsg");
             //添加所需要的post内容
             List<NameValuePair> nvps = new ArrayList<>();
-            nvps.add(new BasicNameValuePair("userCode", "BMWCF"));
-            nvps.add(new BasicNameValuePair("userPass", "BMWCF456"));
+            nvps.add(new BasicNameValuePair("userCode", username));
+            nvps.add(new BasicNameValuePair("userPass", password));
             nvps.add(new BasicNameValuePair("DesNo", phoneNumber));
             nvps.add(new BasicNameValuePair("Msg", message));
             nvps.add(new BasicNameValuePair("Channel", "0"));

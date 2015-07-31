@@ -15,12 +15,13 @@ cd spring-auto/
 mvn clean install -pl '!spring-auto-test' -Dmaven.test.skip=true
 ```
 
-wiki
+详细说明
 ---------------------------
 * [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
 * [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
-* [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
 * [spring-auto-druid](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-druid)
+* [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
+* [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
 
 
 许可证
