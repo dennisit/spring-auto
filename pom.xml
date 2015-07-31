@@ -13,6 +13,7 @@
         <module>spring-auto-test</module>
         <module>spring-auto-qiniuyun</module>
         <module>spring-auto-druid</module>
+        <module>spring-auto-chufa-sms</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -236,6 +237,20 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.12</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- chufa-sms -->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.3.3</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
