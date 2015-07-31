@@ -10,7 +10,7 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "spring.auto.jmustache")
 public class ConfigBean implements Serializable, InitializingBean {
 
-    private String prefix = "META-INF/jmustache-template/";
+    private String prefix = "META-INF/jmustache-templates/";
     private String suffix = "";
     private String encoding = "UTF-8";
 
