@@ -24,6 +24,10 @@ public class DruidDataSourceConfiguration {
     @Autowired
     private ConfigBean configBean;
 
+    public DruidDataSourceConfiguration() {
+        LOGGER.debug("spring-auto: '{}' enabled.", DruidDataSourceConfiguration.class.getSimpleName());
+    }
+
     @Bean
     @Primary
     @ConditionalOnClass(DruidDataSource.class)
