@@ -33,7 +33,7 @@ public class DruidDataSourceConfiguration {
         return doCreateDataSource();
     }
 
-    @Bean
+    @Bean(initMethod = "init", destroyMethod = "close")
     @ConditionalOnClass(DruidDataSource.class)
     @ConditionalOnProperty(name = "spring.auto.druid.primary", havingValue = "false", matchIfMissing = true)
     public DataSource nonPrimaryDataSource() {
