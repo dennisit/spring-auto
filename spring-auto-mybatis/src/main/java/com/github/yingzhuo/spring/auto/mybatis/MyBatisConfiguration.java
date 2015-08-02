@@ -9,11 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
@@ -34,6 +37,10 @@ public class MyBatisConfiguration {
 
     /* -------------------------------------------------------------------------------------- */
 
+    public MyBatisConfiguration() {
+        LOGGER.debug("spring-auto: '{}' enabled.", MyBatisConfiguration.class.getSimpleName());
+    }
+
     @Bean
     public SqlSessionFactoryBean sqlSessionFactory() throws Throwable {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
@@ -45,9 +52,6 @@ public class MyBatisConfiguration {
 
     @Bean
     public SqlSessionTemplate sqlSessionTemplate() throws Throwable {
-
-        LOGGER.debug("create SqlSession's instance.");
-
         SqlSessionTemplate bean;
 
         if (configBean.isUseExceptionTranslator()) {
@@ -65,6 +69,13 @@ public class MyBatisConfiguration {
                     );
         }
         return bean;
+    }
+
+    @Bean(name = "transactionManager")
+    @ConditionalOnMissingBean(PlatformTransactionManager.class)
+    @ConditionalOnProperty(name = "spring.auto.mybatis.config-transaction-manager", havingValue = "transactionManager", matchIfMissing = false)
+    public PlatformTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource);
     }
 
 }
