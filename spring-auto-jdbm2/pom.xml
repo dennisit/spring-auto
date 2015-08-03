@@ -111,11 +111,5 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
-
-        <!-- jdbm2 -->
-        <dependency>
-            <groupId>jdbm</groupId>
-            <artifactId>jdbm</artifactId>
-        </dependency>
     </dependencies>
 </project>

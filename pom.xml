@@ -254,14 +254,6 @@
                 <version>4.3.3</version>
                 <scope>provided</scope>
             </dependency>
-
-            <!-- jdbm2 -->
-            <dependency>
-                <groupId>jdbm</groupId>
-                <artifactId>jdbm</artifactId>
-                <version>2.4</version>
-                <scope>provided</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

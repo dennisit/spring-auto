@@ -3,7 +3,6 @@ package test;
 import com.github.yingzhuo.spring.auto.Boot;
 import jdbm.PrimaryTreeMap;
 import jdbm.RecordManager;
-import jdbm.RecordManagerFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +19,11 @@ public class TestCasesForJdbm2 {
 
     @Test
     public void test() throws Throwable {
-        /** create (or open existing) database */
-        String fileName = "helloWorld";
-        RecordManager recMan = RecordManagerFactory.createRecordManager(fileName);
 
         /** Creates TreeMap which stores data in database.
          *  Constructor method takes recordName (something like SQL table name)*/
         String recordName = "firstTreeMap";
-        PrimaryTreeMap<Integer,String> treeMap = recMan.treeMap(recordName);
+        PrimaryTreeMap<Integer,String> treeMap = manager.treeMap(recordName);
 
         /** add some stuff to map*/
         treeMap.put(1, "One");
@@ -38,7 +34,7 @@ public class TestCasesForJdbm2 {
         // > [1, 2, 3]
 
         /** Map changes are not persisted yet, commit them (save to disk) */
-        recMan.commit();
+        manager.commit();
 
         System.out.println(treeMap.keySet());
         // > [1, 2, 3]
@@ -50,14 +46,14 @@ public class TestCasesForJdbm2 {
         // > [1, 3]
 
         /** Did not like change. Roolback to last commit (undo record remove). */
-        recMan.rollback();
+        manager.rollback();
 
         /** Key 2 was recovered */
         System.out.println(treeMap.keySet());
         // > [1, 2, 3]
 
         /** close record manager */
-        recMan.close();
+        manager.close();
     }
 
 }
