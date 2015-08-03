@@ -1,5 +1,11 @@
 # Java
 target/
+*.jar
+*.war
+*.ear
+*.log
+*.tmp
+*.bak
 
 # IDEs
 .idea/
