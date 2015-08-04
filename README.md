@@ -7,7 +7,7 @@
 安装
 ---------------------------
 
-`spring-auto-test` module仅是为了测试而存在不必安装到本地maven仓库
+本项目并**没有**发布到`Maven Central Repository`
 
 ```
 git clone git@github.com:yingzhuo/spring-auto.git
