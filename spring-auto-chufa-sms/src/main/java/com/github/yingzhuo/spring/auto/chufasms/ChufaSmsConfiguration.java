@@ -28,6 +28,10 @@ public class ChufaSmsConfiguration {
     @Bean
     @ConditionalOnMissingBean(ChufaService.class)
     public ChufaService chufaService() {
-        return new ChufaService();
+        ChufaService bean = new ChufaService();
+        bean.setUsername(configBean.getUsername());
+        bean.setPassword(configBean.getPassword());
+        return bean;
     }
+
 }
