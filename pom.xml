@@ -10,7 +10,6 @@
     <modules>
         <module>spring-auto-mybatis</module>
         <module>spring-auto-jmustache</module>
-        <module>spring-auto-test</module>
         <module>spring-auto-qiniuyun</module>
         <module>spring-auto-druid</module>
         <module>spring-auto-chufa-sms</module>
