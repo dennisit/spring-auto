@@ -19,7 +19,6 @@ mvn clean install -Dmaven.test.skip=true
 ---------------------------
 * [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
 * [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
-* [spring-auto-druid](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-druid)
 * [spring-auto-jdbm2](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jdbm2)
 * [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
 * [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
