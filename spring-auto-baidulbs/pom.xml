@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-auto-jmustache</artifactId>
+    <artifactId>spring-auto-baidulbs</artifactId>
 
     <dependencies>
         <!-- spring-boot -->
@@ -94,12 +94,6 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-        </dependency>
-
-        <!-- jmustache -->
-        <dependency>
-            <groupId>com.samskivert</groupId>
-            <artifactId>jmustache</artifactId>
         </dependency>
 
         <!-- slf4j -->

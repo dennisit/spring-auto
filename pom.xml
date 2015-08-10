@@ -13,13 +13,14 @@
         <module>spring-auto-qiniuyun</module>
         <module>spring-auto-chufa-sms</module>
         <module>spring-auto-jdbm2</module>
+        <module>spring-auto-baidulbs</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <encoding>UTF-8</encoding>
         <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
-        <spring.version>4.1.7.RELEASE</spring.version>
+        <spring.version>4.2.0.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
