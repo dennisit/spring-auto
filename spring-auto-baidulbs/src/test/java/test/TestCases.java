@@ -20,7 +20,7 @@ public class TestCases {
     private BaiduLbsService service;
 
     @Test
-    public void test() {
+    public void test1() {
         Optional<LocationInformation> information = service.findLocationByIpAddress("202.198.16.3");
         System.out.println("-------------------------------");
         information.ifPresent(System.out::println);

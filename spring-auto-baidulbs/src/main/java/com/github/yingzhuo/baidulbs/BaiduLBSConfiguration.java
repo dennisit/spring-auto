@@ -12,20 +12,20 @@ import org.springframework.core.annotation.Order;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(ConfigBean.class)
 @ConditionalOnProperty(name = "spring.auto.baidulbs.enabled", havingValue = "true", matchIfMissing = false)
-public class BaiduLBSConfiguration {
+public class BaiduLbsConfiguration {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BaiduLBSConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaiduLbsConfiguration.class);
 
     @Autowired
     private ConfigBean configBean;
 
-    public BaiduLBSConfiguration() {
-        LOGGER.debug("spring-auto: '{}' enabled.", BaiduLBSConfiguration.class.getSimpleName());
+    public BaiduLbsConfiguration() {
+        LOGGER.debug("spring-auto: '{}' enabled.", BaiduLbsConfiguration.class.getSimpleName());
     }
 
     @Bean
     public BaiduLbsService baiduLbsService() {
-        BaiduLbsService bean = new BaiduLbsService();
+        SimpleBaiduLbsService bean = new SimpleBaiduLbsService();
         bean.setAk(configBean.getAk());
         return bean;
     }
