@@ -13,7 +13,6 @@
         <module>spring-auto-qiniuyun</module>
         <module>spring-auto-chufa-sms</module>
         <module>spring-auto-jdbm2</module>
-        <module>spring-auto-baidulbs</module>
     </modules>
     <packaging>pom</packaging>
 
