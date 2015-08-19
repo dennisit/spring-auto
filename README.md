@@ -18,6 +18,7 @@ mvn clean install -Dmaven.test.skip=true
 维基
 ---------------------------
 * [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
+* [spring-auto-datasource](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-datasource)
 * [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
 * [spring-auto-jdbm2](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jdbm2)
 * [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
