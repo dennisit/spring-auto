@@ -43,10 +43,10 @@ public class DataSourceConfiguration {
             bean.add(NamedDataSource.of(MASTER, configSupport.getMaster()));
         }
 
-        List<DataSource> slaveDataSourceList = configSupport.getSlavers();
+        List<DataSource> slaveDataSourceList = configSupport.getSlaves();
         if (slaveDataSourceList != null && !slaveDataSourceList.isEmpty()) {
-            for (int i = 0; i < configSupport.getSlavers().size(); i++) {
-                bean.add(NamedDataSource.of(SLAVE + i, configSupport.getSlavers().get(i)));
+            for (int i = 0; i < configSupport.getSlaves().size(); i++) {
+                bean.add(NamedDataSource.of(SLAVE + i, configSupport.getSlaves().get(i)));
             }
         }
 
