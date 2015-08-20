@@ -16,9 +16,11 @@ public abstract class DataSourceSwitchAdviceSupport {
 
         DataSourceConfig annotation = findAnnotation(joinPoint, DataSourceConfig.class);
         if (annotation != null) {
-            LOGGER.debug("数据源设置: name={}", annotation.value());
             DataSourceRemoter remoter = DataSourceRemoter.getInstance();
             remoter.set(annotation.value());
+            LOGGER.debug("数据源设置: name={}", annotation.value());
+        } else {
+            LOGGER.debug("数据源设置: name=<default>");
         }
 
         return joinPoint.proceed();
