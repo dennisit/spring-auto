@@ -15,7 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-@SuppressWarnings("all")
 public final class CompositeDataSource implements NamedDataSource, InitializingBean {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(CompositeDataSource.class);
@@ -52,21 +51,16 @@ public final class CompositeDataSource implements NamedDataSource, InitializingB
         if (!method.isAccessible()) {
             method.setAccessible(true);
         }
-        method.invoke(target, null);
+        method.invoke(target);
     }
 
     public CompositeDataSource() {
         super();
     }
 
-    public CompositeDataSource add(NamedDataSource namedDataSource) {
-        this.namedDataSources.put(namedDataSource.getName(), namedDataSource.getDataSource());
-        return this;
-    }
-
     public CompositeDataSource add(NamedDataSource... namedDataSourceArray) {
         for (NamedDataSource namedDataSource : namedDataSourceArray) {
-            add(namedDataSource);
+            this.namedDataSources.put(namedDataSource.getName(), namedDataSource.getDataSource());
         }
         return this;
     }

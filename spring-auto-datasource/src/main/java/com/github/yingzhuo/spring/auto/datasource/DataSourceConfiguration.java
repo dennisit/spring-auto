@@ -21,7 +21,7 @@ public class DataSourceConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceConfiguration.class);
 
     private static final String MASTER = "MASTER";
-    private static final String SLAVE = "SLAVE";
+    private static final String SLAVE  = "SLAVE";
 
     @Autowired
     private CompositeDataSourceConfigSupport configSupport;
@@ -40,16 +40,16 @@ public class DataSourceConfiguration {
 
         DataSource master = configSupport.getMaster();
         if (master != null) {
-            bean.add(NamedDataSource.of(MASTER, configSupport.getMaster()));
+            bean.add(NamedDataSource.of(MASTER, master));
         }
 
-        List<DataSource> slaveDataSourceList = configSupport.getSlaves();
-        if (slaveDataSourceList != null && !slaveDataSourceList.isEmpty()) {
-            for (int i = 0; i < configSupport.getSlaves().size(); i++) {
-                bean.add(NamedDataSource.of(SLAVE + i, configSupport.getSlaves().get(i)));
+        List<DataSource> slaves = configSupport.getSlaves();
+        if (slaves != null && !slaves.isEmpty()) {
+            for (int i = 0; i < slaves.size(); i++) {
+                bean.add(NamedDataSource.of(SLAVE + i, slaves.get(i)));
             }
         }
-
         return bean;
     }
+
 }
