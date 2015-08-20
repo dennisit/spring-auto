@@ -1,7 +1,6 @@
 package com.github.yingzhuo.spring.auto.datasource;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +12,6 @@ public abstract class DataSourceSwitchAdviceSupport {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(DataSourceSwitchAdviceSupport.class);
 
-    @Around(value = "execution(public * meimeida.main.service.impl.*.*(..))")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 
         DataSourceConfig annotation = findAnnotation(joinPoint, DataSourceConfig.class);
