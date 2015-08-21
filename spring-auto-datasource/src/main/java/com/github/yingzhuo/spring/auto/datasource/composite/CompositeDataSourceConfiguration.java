@@ -1,6 +1,7 @@
 package com.github.yingzhuo.spring.auto.datasource.composite;
 
 import com.github.yingzhuo.spring.auto.datasource.NamedDataSource;
+import com.github.yingzhuo.spring.auto.datasource.composite.aop.DefaultDataSourceSwitchAdvice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,9 @@ public class CompositeDataSourceConfiguration {
         return bean;
     }
 
+    @Bean
+    @ConditionalOnProperty(name = "spring.auto.composite.datasource.switch-advice", havingValue = "true", matchIfMissing = false)
+    public DefaultDataSourceSwitchAdvice defaultDataSourceSwitchAdvice() {
+        return new DefaultDataSourceSwitchAdvice();
+    }
 }
