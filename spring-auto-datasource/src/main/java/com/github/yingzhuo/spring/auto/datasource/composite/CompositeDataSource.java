@@ -1,5 +1,7 @@
-package com.github.yingzhuo.spring.auto.datasource;
+package com.github.yingzhuo.spring.auto.datasource.composite;
 
+import com.github.yingzhuo.spring.auto.datasource.composite.aop.DataSourceRemoter;
+import com.github.yingzhuo.spring.auto.datasource.NamedDataSource;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
@@ -31,6 +33,7 @@ public final class CompositeDataSource implements NamedDataSource, InitializingB
     }
 
     public void init() throws Exception {
+        LOGGER.debug("init {}", CompositeDataSource.class.getSimpleName());
         if (StringUtils.hasLength(initMethod)) {
             for (DataSource ds : this.namedDataSources.values()) {
                 reflectionInvocateMethod(ds, initMethod);
@@ -39,6 +42,7 @@ public final class CompositeDataSource implements NamedDataSource, InitializingB
     }
 
     public void close() throws Exception {
+        LOGGER.debug("close {}", CompositeDataSource.class.getSimpleName());
         if (StringUtils.hasLength(destoryMethod)) {
             for (DataSource ds : this.namedDataSources.values()) {
                 reflectionInvocateMethod(ds, destoryMethod);

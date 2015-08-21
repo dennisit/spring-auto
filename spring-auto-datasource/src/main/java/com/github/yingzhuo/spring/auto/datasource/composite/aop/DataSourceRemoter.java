@@ -1,4 +1,4 @@
-package com.github.yingzhuo.spring.auto.datasource;
+package com.github.yingzhuo.spring.auto.datasource.composite.aop;
 
 
 public final class DataSourceRemoter {

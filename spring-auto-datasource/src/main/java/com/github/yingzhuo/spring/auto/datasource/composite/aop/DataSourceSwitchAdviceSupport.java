@@ -1,5 +1,6 @@
-package com.github.yingzhuo.spring.auto.datasource;
+package com.github.yingzhuo.spring.auto.datasource.composite.aop;
 
+import com.github.yingzhuo.spring.auto.datasource.composite.DataSourceConfig;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;

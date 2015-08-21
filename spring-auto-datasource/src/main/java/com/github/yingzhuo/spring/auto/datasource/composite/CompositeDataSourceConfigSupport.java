@@ -1,10 +1,11 @@
-package com.github.yingzhuo.spring.auto.datasource;
+package com.github.yingzhuo.spring.auto.datasource.composite;
 
 import javax.sql.DataSource;
+import java.io.Serializable;
 import java.util.List;
 
 
-public interface CompositeDataSourceConfigSupport {
+public interface CompositeDataSourceConfigSupport extends Serializable {
 
     public DataSource getMaster();
 

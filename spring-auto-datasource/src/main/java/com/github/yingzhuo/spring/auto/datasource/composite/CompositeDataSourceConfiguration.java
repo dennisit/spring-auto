@@ -1,5 +1,6 @@
-package com.github.yingzhuo.spring.auto.datasource;
+package com.github.yingzhuo.spring.auto.datasource.composite;
 
+import com.github.yingzhuo.spring.auto.datasource.NamedDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,9 @@ import java.util.List;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ConditionalOnBean(CompositeDataSourceConfigSupport.class)
 @ConditionalOnProperty(name = "spring.auto.composite.datasource.enabled", havingValue = "true", matchIfMissing = false)
-public class DataSourceConfiguration {
+public class CompositeDataSourceConfiguration {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CompositeDataSourceConfiguration.class);
 
     private static final String MASTER = "MASTER";
     private static final String SLAVE  = "SLAVE";
@@ -26,8 +27,8 @@ public class DataSourceConfiguration {
     @Autowired
     private CompositeDataSourceConfigSupport configSupport;
 
-    public DataSourceConfiguration() {
-        LOGGER.debug("spring-auto: '{}' enabled.", DataSourceConfiguration.class.getSimpleName());
+    public CompositeDataSourceConfiguration() {
+        LOGGER.debug("spring-auto: '{}' enabled.", CompositeDataSourceConfiguration.class.getSimpleName());
     }
 
     @Primary
