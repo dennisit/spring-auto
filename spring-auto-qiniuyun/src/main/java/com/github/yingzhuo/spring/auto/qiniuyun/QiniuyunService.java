@@ -63,6 +63,21 @@ public class QiniuyunService implements InitializingBean {
         bucketManager.delete(effBucket, key);
     }
 
+    public void deleteByUrl(String resourceUrl) throws IOException {
+        deleteByUrl(null, resourceUrl);
+    }
+
+    public void deleteByUrl(String bucket, String resourceUrl) throws IOException {
+        if (resourceUrl == null) {
+            return;
+        }
+
+        int searchStart = resourceUrl.startsWith("https://") ? 8 : 7;
+        final int index =  resourceUrl.indexOf("/", searchStart);
+        final String key = resourceUrl.substring(index + 1);
+        delete(bucket, key);
+    }
+
     public Set<String> getBuckets() throws IOException {
         String[] buckets = bucketManager.buckets();
         return new HashSet<>(Arrays.asList(buckets));
