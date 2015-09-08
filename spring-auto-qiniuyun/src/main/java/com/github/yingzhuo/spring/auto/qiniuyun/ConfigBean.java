@@ -9,10 +9,10 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "spring.auto.qiniuyun")
 public class ConfigBean implements Serializable, InitializingBean {
 
-    private String defaultBucket;
+    private String bucket;
     private String accessKey;
     private String secretKey;
-    private String domain;
+    private String urlPrefix;
 
     public ConfigBean() {
         super();
@@ -20,18 +20,22 @@ public class ConfigBean implements Serializable, InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Assert.hasText(defaultBucket);
-        Assert.hasText(accessKey);
-        Assert.hasText(secretKey);
-        Assert.hasText(domain);
+        Assert.hasText(bucket, "you should config 'spring.auto.qiniuyun.bucket'.");
+        Assert.hasText(accessKey, "you should config 'spring.auto.qiniuyun.access-key'.");
+        Assert.hasText(secretKey, "you should config 'spring.auto.qiniuyun.secret-key'.");
+        Assert.hasText(urlPrefix, "you should config 'spring.auto.qiniuyun.url-prefix'.");
+
+        if (!urlPrefix.endsWith("/")) {
+            urlPrefix += "/";
+        }
     }
 
-    public String getDefaultBucket() {
-        return defaultBucket;
+    public String getBucket() {
+        return bucket;
     }
 
-    public void setDefaultBucket(String defaultBucket) {
-        this.defaultBucket = defaultBucket;
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
     }
 
     public String getAccessKey() {
@@ -50,11 +54,12 @@ public class ConfigBean implements Serializable, InitializingBean {
         this.secretKey = secretKey;
     }
 
-    public String getDomain() {
-        return domain;
+    public String getUrlPrefix() {
+        return urlPrefix;
     }
 
-    public void setDomain(String domain) {
-        this.domain = domain;
+    public void setUrlPrefix(String urlPrefix) {
+        this.urlPrefix = urlPrefix;
     }
+
 }
