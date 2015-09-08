@@ -73,6 +73,17 @@ public class SimpleQiniuyunManager implements QiniuyunManager, InitializingBean 
         bucketManager.delete(bucket, key);
     }
 
+    @Override
+    public void deleteByUrl(String url) throws IOException {
+        if (url.startsWith(urlPrefix)) {
+            String key = url.substring(urlPrefix.length());
+            delete(key);
+            return;
+        }
+
+        throw new IOException();
+    }
+
     private String createToken(String bucket, String key, boolean overwrite) {
         if (overwrite) {
             return auth.uploadToken(bucket, key);

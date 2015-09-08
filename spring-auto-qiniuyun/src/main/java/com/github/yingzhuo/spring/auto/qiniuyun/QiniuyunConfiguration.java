@@ -37,4 +37,5 @@ public class QiniuyunConfiguration {
         manager.setUrlPrefix(configBean.getUrlPrefix());
         return manager;
     }
+
 }

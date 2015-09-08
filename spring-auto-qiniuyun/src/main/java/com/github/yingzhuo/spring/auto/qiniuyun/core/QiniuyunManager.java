@@ -54,4 +54,11 @@ public interface QiniuyunManager {
      */
     public void delete(String key) throws IOException;
 
+    /**
+     * 删除资源
+     *
+     * @param url 资源url
+     * @throws IOException 操作失败时抛出
+     */
+    public void deleteByUrl(String url) throws IOException;
 }
