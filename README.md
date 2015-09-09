@@ -23,6 +23,7 @@ mvn clean install -Dmaven.test.skip=true
 * [spring-auto-jdbm2](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jdbm2)
 * [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
 * [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
+* [spring-auto-retry](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-retry)
 
 
 许可证

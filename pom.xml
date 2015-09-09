@@ -14,13 +14,14 @@
         <module>spring-auto-chufa-sms</module>
         <module>spring-auto-jdbm2</module>
         <module>spring-auto-datasource</module>
+        <module>spring-auto-retry</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <encoding>UTF-8</encoding>
         <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
-        <spring.version>4.2.0.RELEASE</spring.version>
+        <spring.version>4.2.1.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
@@ -178,6 +179,14 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- spring-retry -->
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>1.1.2.RELEASE</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
@@ -265,6 +274,7 @@
                 <groupId>jdbm2</groupId>
                 <artifactId>jdbm2</artifactId>
                 <version>2.4</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
