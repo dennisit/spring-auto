@@ -24,6 +24,7 @@ mvn clean install -Dmaven.test.skip=true
 * [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
 * [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
 * [spring-auto-retry](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-retry)
+* [spring-auto-chanzor](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chanzor)
 
 
 许可证
