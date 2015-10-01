@@ -46,7 +46,11 @@ public class ChanzorService {
                     .data("content", new String(content.getBytes(), "UTF-8"))
                     .post();
 
-            if (!"success".equalsIgnoreCase(document.select("returnstatus").text())) {
+            // 畅卓接口在成功时返回的接口 有一个拼写错误 ("Success" -> "Sucess")
+            // 本程序只好妥协一下
+            String result = document.select("returnstatus").text();
+
+            if (! (StringUtils.equalsIgnoreCase(result, "success") || StringUtils.equalsIgnoreCase(result, "sucess"))) {
                 final String message = document.select("message").text();
                 throw new IOException(message);
             }
@@ -69,7 +73,11 @@ public class ChanzorService {
                     .data("password", password)
                     .post();
 
-            if (!"success".equalsIgnoreCase(document.select("returnstatus").text())) {
+            // 畅卓接口在成功时返回的接口 有一个拼写错误 ("Success" -> "Sucess")
+            // 本程序只好妥协一下
+            String result = document.select("returnstatus").text();
+
+            if (! (StringUtils.equalsIgnoreCase(result, "success") || StringUtils.equalsIgnoreCase(result, "sucess"))) {
                 final String message = "无法获取剩余短信额度";
                 throw new IOException(message);
             } else {
