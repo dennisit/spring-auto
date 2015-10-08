@@ -16,12 +16,13 @@
         <module>spring-auto-datasource</module>
         <module>spring-auto-retry</module>
         <module>spring-auto-chanzor</module>
+        <module>spring-auto-baidulbs</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <encoding>UTF-8</encoding>
-        <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
+        <spring.boot.version>1.2.6.RELEASE</spring.boot.version>
         <spring.version>4.2.1.RELEASE</spring.version>
     </properties>
 
@@ -253,7 +254,7 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.12</version>
-                <scope>provided</scope>
+                <!--<scope>provided</scope>-->
             </dependency>
 
             <!-- chufa-sms -->
@@ -283,7 +284,7 @@
                 <groupId>org.jsoup</groupId>
                 <artifactId>jsoup</artifactId>
                 <version>1.8.3</version>
-                <scope>provided</scope>
+                <!--<scope>provided</scope>-->
             </dependency>
 
             <!-- commons -->
@@ -291,7 +292,7 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.4</version>
-                <scope>provided</scope>
+                <!--<scope>provided</scope>-->
             </dependency>
         </dependencies>
     </dependencyManagement>
