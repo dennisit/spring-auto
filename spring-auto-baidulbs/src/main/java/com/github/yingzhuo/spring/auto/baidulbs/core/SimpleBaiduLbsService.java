@@ -1,6 +1,9 @@
 package com.github.yingzhuo.spring.auto.baidulbs.core;
 
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.yingzhuo.spring.auto.baidulbs.domain.Location;
 import com.github.yingzhuo.spring.auto.baidulbs.domain.PlaceResult;
 import com.github.yingzhuo.spring.auto.baidulbs.domain.PlaceSuggestion;
 import org.jsoup.Jsoup;
@@ -19,6 +22,7 @@ public class SimpleBaiduLbsService implements BaiduLbsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleBaiduLbsService.class);
     private static final String SEARCH_URL = "http://api.map.baidu.com/place/v2/search";
     private static final String SEARCH_SUGGESTION_URL = "http://api.map.baidu.com/place/v2/suggestion";
+    private static final String IP_2_LOCATION_URL = "http://api.map.baidu.com/location/ip";
 
     private final String ak;
 
@@ -117,6 +121,35 @@ public class SimpleBaiduLbsService implements BaiduLbsService {
             }
 
             return list;
+        } catch (java.io.IOException e) {
+            throw new IOException(e);
+        }
+    }
+
+    @Override
+    public Location ip2Location(String ip) {
+        try {
+            Document document = Jsoup.connect(SEARCH_SUGGESTION_URL)
+                    .data("ak", ak)
+                    .data("ip", ip)
+                    .data("coor", "bd09ll")
+                    .get();
+
+            String content = document.toString();
+
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(content);
+
+            String address = root.path("content").path("address").asText();
+            String city = root.path("content").path("address_detail").path("city").asText();
+            Integer cityCode = root.path("content").path("address_detail").path("city_code").asInt();
+            String district = root.path("content").path("address_detail").path("district").asText("未知");
+            String province = root.path("content").path("address_detail").path("province").asText("未知");
+            String street = root.path("content").path("address_detail").path("street").asText("未知");
+            String streetNumber = root.path("content").path("address_detail").path("street_number").asText("未知");
+            Double x = root.path("content").path("point").path("x").asDouble();
+            Double y = root.path("content").path("point").path("y").asDouble();
+            return new Location(address, city, cityCode, district, province, street, streetNumber, x, y);
         } catch (java.io.IOException e) {
             throw new IOException(e);
         }

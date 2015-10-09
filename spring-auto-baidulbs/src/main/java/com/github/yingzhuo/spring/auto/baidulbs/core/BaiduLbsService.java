@@ -1,5 +1,6 @@
 package com.github.yingzhuo.spring.auto.baidulbs.core;
 
+import com.github.yingzhuo.spring.auto.baidulbs.domain.Location;
 import com.github.yingzhuo.spring.auto.baidulbs.domain.PlaceResult;
 import com.github.yingzhuo.spring.auto.baidulbs.domain.PlaceSuggestion;
 
@@ -45,5 +46,20 @@ public interface BaiduLbsService {
      */
     public List<PlaceResult> searchPlace(String query, double x, double y, int radius, int pageNum, int pageSize);
 
+    /**
+     * 获取地点推荐
+     *
+     * @param query  检索关键字 如: 银行,饭店等
+     * @param region 城市名称 如: 北京,上海等
+     * @return 结果
+     */
     public List<PlaceSuggestion> searchPlaceSuggestion(String query, String region);
+
+    /**
+     * 通过ip推算出地理位置
+     *
+     * @param ip IP地址
+     * @return 地理位置信息
+     */
+    public Location ip2Location(String ip);
 }
