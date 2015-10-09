@@ -1,7 +1,7 @@
 package com.github.yingzhuo.spring.auto.baidulbs;
 
 import com.github.yingzhuo.spring.auto.baidulbs.core.BaiduLbsService;
-import com.github.yingzhuo.spring.auto.baidulbs.core.SimpleLbsService;
+import com.github.yingzhuo.spring.auto.baidulbs.core.SimpleBaiduLbsService;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +27,6 @@ public class BaiduLbsConfiguration {
 
     @Bean
     public BaiduLbsService baiduLbsService(ConfigBean configBean) {
-        return new SimpleLbsService(configBean.getAk());
+        return new SimpleBaiduLbsService(configBean.getAk());
     }
 }
