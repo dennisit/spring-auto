@@ -17,14 +17,15 @@ mvn clean install -Dmaven.test.skip=true
 
 维基
 ---------------------------
-* [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
-* [spring-auto-datasource](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-datasource)
-* [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
-* [spring-auto-jdbm2](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jdbm2)
+* [spring-auto-baidulbs](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-baidulbs)
+* [spring-auto-chanzor](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chanzor)
 * [spring-auto-chufa-sms](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chufa-sms)
+* [spring-auto-datasource](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-datasource)
+* [spring-auto-jdbm2](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jdbm2)
+* [spring-auto-jmustache](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-jmustache)
+* [spring-auto-mybatis](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-mybatis)
 * [spring-auto-qiniuyun](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-qiniuyun)
 * [spring-auto-retry](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-retry)
-* [spring-auto-chanzor](https://github.com/yingzhuo/spring-auto/wiki/wiki:spring-auto-chanzor)
 
 
 许可证
