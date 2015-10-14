@@ -13,6 +13,7 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.beans.ConstructorProperties;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,13 +27,9 @@ public class SimpleBaiduLbsService implements BaiduLbsService {
 
     private final String ak;
 
+    @ConstructorProperties({"ak"})
     public SimpleBaiduLbsService(String ak) {
         this.ak = ak;
-    }
-
-    public static void main(String[] args) {
-        BaiduLbsService service = new SimpleBaiduLbsService("n8GMgEtsqd59TQwuAbSvFMbm");
-        service.searchPlaceSuggestion("天安门", "北京");
     }
 
     @Override
